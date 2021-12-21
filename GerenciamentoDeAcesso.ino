@@ -85,14 +85,14 @@ void novoUsuario()
       cargo = Serial.read();
       if (cargo == 's')
       {
-        Serial.println("Você e um administrador");
+        Serial.println("Voce e um administrador");
         Serial.println(" ");
         cargoLen = senhaLen + 1;
         EEPROM.write(cargoLen, cargo);
       }
       else if (cargo == 'n')
       {
-        Serial.println("Você não e um administrador");
+        Serial.println("Voce não e um administrador");
         Serial.println(" ");
         cargoLen = senhaLen + 1;
         EEPROM.write(cargoLen, cargo);
@@ -124,7 +124,7 @@ void abrirPorta1()
   EEPROM.read(cargo);
   if (cargo == 's')
   {
-    Serial.println("Deseja abrir a porta 1? Digite 's' ou 'n'");
+    Serial.println("Deseja abrir a sala 1? Digite 's' ou 'n'");
     while (Serial.available() <= 0){}
 
     if (Serial.read() == 's')
@@ -156,10 +156,10 @@ void abrirPorta2()
   EEPROM.read(cargo);
   if (cargo == 's')
   {
-    Serial.println("Deseja abrir a porta 2? Digite 's' ou 'n'");
+    Serial.println("Deseja abrir a sala 2? Digite 's' ou 'n'");
     while (Serial.available() <= 0){}
 
-    if (Serial.read() == 'y')
+    if (Serial.read() == 's')
     {
       digitalWrite(led2, HIGH);
       Serial.println("Sala 2 aberta");
